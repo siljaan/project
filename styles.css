@@ -1,0 +1,68 @@
+html {
+  background: url(background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-image: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(123,83,92,0.7) 100%),
+  url('background.jpg');
+  font-family: 'Signika', sans-serif;
+}
+
+.logo {
+  height: 50px;
+  padding: 10px;
+  float: right;
+}
+
+header {
+  height: 90px;
+}
+
+p {
+  font-size: 25px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.box {
+  width: 70%;
+  height: 60%;
+  background-color: white;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 3px #686868;
+  font-size: 20px;
+}
+
+.box > a {
+  float: right;
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.box-1 {
+  background-color: #fb9f36;
+}
+
+.box-2 {
+  background-color: #4e64eb;
+}
+.box-3 {
+  background-color: #51b16d;
+}
+.box-4 {
+  background-color: #d65555;
+}
+
+.dinner {
+  width: 55px;
+  position: absolute;
+  opacity: 0.7;
+}
+
