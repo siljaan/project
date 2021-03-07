@@ -5,13 +5,17 @@
     <title>sääharjoitus</title>
     <script src="weather.js"></script>
 </head>
-<body onload="getWeather()">
+<body onload="allFunctions()">
     <div class="location">
        <h1 class="location-timezone">Timezone</h1> 
        <p>Icon</p>
     </div>
     <div class="temperature">
         <h2 class="degree">Lämpötila</h2>
-        <div class="description"></div> 
+        <div class="description">
+            <img src="http://openweathermap.org/img/wn/13d.png" alt="">
+        </div> 
+        <div class="day"></div>
+        <p id="demo"></p>
     </div>
 </body>
