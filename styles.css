@@ -4,7 +4,7 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-image: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(123,83,92,0.7) 100%),
+  background-image: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(123,83,92,0.9) 100%),
   url('background.jpg');
   font-family: 'Signika', sans-serif;
 }
@@ -65,4 +65,43 @@ p {
   position: absolute;
   opacity: 0.7;
 }
+.day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* flex-direction: column; */
+  margin-top: 50px;
+}
+
+h2.degree {
+  margin: 0px;
+  /* top: -8px; */
+}
+
+#today {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+  font-size: 30px;
+}
+
+div > img {
+  width: 75px;
+}
+
+.description > img {
+  width: 120px;
+}
+
+.temperature {
+  background-color: rgba(255, 255, 255, 0.5);
+  /* background: linear-gradient(
+45deg
+, red, yellow); */
+  border-radius: 26px;
+}
+
+
 

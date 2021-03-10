@@ -34,39 +34,36 @@ function getWeather () {
         weather.tila = data.list[0].main.temp-273.15;
         weather.iconId = data.list[0].weather[0].icon;
         weather.list = data.list;
-        var mainContainer = document.getElementsByClassName("day");
-        for(var i=0; i<weather.list.length; i++){
-            var everyNinth = (i+1) % 8 === 0;
+        const mainContainer = document.querySelector(".day");
+        const iconContainer = document.querySelector(".icon");
+        var text = "";
+        function addList() {       
+        for(var i=0; i<weather.list.length; i++){ 
+            var everyNinth = (i+1) % 8 === 0;            
             if (everyNinth) {
-            console.log(data.list[i].main.temp-273.15);
+                var saa = document.createElement("div"); 
+                var icon = document.createElement("div");               
+                weather.tila1 = data.list[i].main.temp-273.15;
+                weather.icon1 = data.list[i].weather[0].icon;
+                saa.innerHTML = weather.tila1.toFixed(0)+"°C";
+                icon.innerHTML = "<img src='http://openweathermap.org/img/wn/"+weather.icon1+".png'>";
+                mainContainer.appendChild(saa);
+                saa.appendChild(icon);
+                console.log(weather.tila1);
             console.log(data.list[i].weather[0].icon);
         }
-            var weathers = document.createElement("li");
-        var text = "";
-        var x;
-
-        }   
-         //         menu.menus = data.courses;
-//         var text = "";
-//         var x;
-//         var mainContainer = document.getElementById("menus");
-            //         for (x in data.courses){
-//             var dish = document.createElement("li");
-//             text += data.courses[x].title_fi + data.courses[x].price +
-//             data.courses[x].dietcodes+"<br>";
-//             dish.innerHTML = text;
-            // var everyninth = (i+1) % 9 === 0;
-
+        }}
+        addList();
     })
     .then(function(){
         displayWeather();
     })
     function displayWeather() {
         const place = document.querySelector(".degree");
-        place.innerHTML = weather.tila.toFixed(1) + " C";
-        const iconElement = document.querySelector("description");
-        iconElement.innerHTML = `<img src="http://openweathermap.org/img/wn/04n.png"/>`;        
-            }
+        place.innerHTML = weather.tila.toFixed(0) + "°C";
+        const iconElement = document.querySelector(".description");
+        iconElement.innerHTML = "<img src='http://openweathermap.org/img/wn/"+weather.iconId+".png'/>"; 
+        }
 }
 
 
@@ -118,16 +115,18 @@ function getDay() {
 
     var container = document.getElementById("demo");
     
-    for(i=0; i<5; i++){
-        var n = d.getDay()+1; 
-        console.log(weekday[d.getDay()+n+i]);
-        var weekdays = weekday[d.getDay()+n+i];
-        var day = document.createElement("li");
-       
-       container.appendChild(day);
-    }
+    function addText() {
+for(i=0; i<5; i++){
+        var n = d.getDay(); 
+ 
+        var weekdays = [d.getDay()+n+i];
     
-    day.innerHTML = weekdays;
+        var day = document.createElement("li");
+        day.textContent = weekdays;        
+        container.appendChild(day);
+    }
+    }
+    addText(d.getDay());
   }
 
   function allFunctions() {
